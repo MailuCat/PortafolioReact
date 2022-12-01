@@ -1,20 +1,56 @@
+
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navbar {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 1.5em;
+  background-color: teal;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.navbar a {
+  color: white;
+  padding-right: 30px;
 }
+
+a{
+  text-decoration: none;
+}
+
+h1{
+ color: teal;
+ padding: 2em;
+ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+h2{
+  color: teal;
+ padding: 2em;
+ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+p{
+  font-family: 'Arial Narrow', Arial, sans-serif;
+  font-size: 20px;
+  text-align: justify;
+  margin: auto, 400px, 400px, 50px;
+}
+
+.Card {
+  padding: 10px;
+}
+
+.card-title{
+  color: #B56D99;
+}
+
+.card-text{
+   font-family: Helvetica, sans-serif;
+   font-size: 1em;
+}
+
 
 .App-header {
-  background-color: #282c34;
+  background-color:white;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -24,15 +60,8 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.margin_icons{
+  margin: 5px;
+  color: white;
+ 
 }
