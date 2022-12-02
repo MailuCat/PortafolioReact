@@ -1,72 +1,72 @@
+import React, { useRef } from 'react';
 import emailjs from 'emailjs-com';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
-
-//   emailjs.sendForm('service_kl4nhbv','template_v9rmw9e', 'Jrc0SO05xvI0i7zUM')
 
 export const Contacto = () => {
-  const btn = document.getElementById('button');
+      const form = useRef();
 
-  document.getElementById('form')
-    .addEventListener('submit', function (event) {
-      event.preventDefault();
-
-      btn.value = 'Enviando...';
-
-      const serviceID = 'default_service';
-      const templateID = 'template_v9rmw9e';
-
-      emailjs.sendForm(serviceID, templateID, this)
-        .then(() => {
-          btn.value = 'Send Email';
-          alert('Sent!');
-        }, (err) => {
-          btn.value = 'Send Email';
-          alert(JSON.stringify(err));
-        });
-    });
+      const enviarForm = (e) => {
+        e.preventDefault();
+    
+        emailjs.sendForm('service_kl4nhbv', 'template_v9rmw9e', form.current, 'Jrc0SO05xvI0i7zUM')
+          .then((result) => {
+              console.log(result.text);
+              
+              e.target.reset()
+          }, (error) => {
+              console.log(error.text);
+          });
+      };
+    
   return (
-<form id="form">
-     <div class="mb-3">
-    <div class="row">
-      <div class="col-md-6 col-12">
-        <label class="form-label" for="exampleForm.ControlInput1">Nombre</label>
-      </div>
-      <div class="col-md-6 col-12">
-          <input name="from_name" placeholder="" type="text" id="exampleForm.ControlInput1" class="form-control"/>
-      </div>
-    </div>
-     </div>
-     <div class="mb-3">
-  <div class="row">
-    <div class="col-md-6 col-12">
-        <label class="form-label" for="e-mail">Correo electrónico</label>
-    </div>
-    <div class="col-md-6 col-12">
-        <input name="email" placeholder="" type="email" id="e-mail" class="form-control"/>
-   </div>
-  </div>
-    </div>
-    <div class="form-floating">
-    <div class="row">
-        <div class="col-md-6 col-12">
-          <label class="form-label" for="comentario">Comentario</label>
-        </div>
-        <div class="col-md-6 col-12">
-          <textarea name="message" placeholder="" id="comentario" class="form-control"></textarea>
-        </div>
-    </div>
-      <label for="comentario"></label>
-    </div>
-    <div class="row">
-      <div class="col">
-      </div>
-      <div class="p-5 col">
-        <button type="submit" value="Send" class="btn btn-success">Enviar</button> 
-      </div>
-    </div>
-</form>
-  
- 
-  )
+    <Container fluid="md" className='Container_contacto'>
+      <h2>¿Alguna duda?</h2>
+      <h4>Me puedes escribir ...</h4>
+        <form ref={form} onSubmit={enviarForm}>
+          <div className="mb-3">
+            <Row>
+              <Col xs={12} md={6}>
+              <label className="form-label">Nombre</label>
+              </Col>
+              <Col xs={12} md={6}>
+              <input name="from_name" placeholder="" type="text" className="form-control"/>
+              </Col>
+            </Row>
+          </div>
+          <div className="mb-3">
+            <Row>
+              <Col xs={12} md={6}>
+                <label className="form-label">Correo electrónico</label>
+              </Col>
+              <Col xs={12} md={6}>
+                <input name="email" placeholder="" type="email" className="form-control"/>
+              </Col>
+            </Row>
+          </div>
+          <div className="form-floating">
+             <Row>
+             <Col xs={12} md={6}>
+                  <label className="form-label">Comentario</label>
+                </Col>
+                <Col xs={12} md={6}>
+                  <textarea name="message" placeholder="" className="form-control"></textarea>
+                </Col>
+             </Row>
+                <label ></label>
+          </div>
+            <Row>
+              <Col xs={12} md={6}>
+              </Col>
+              <Col xs={12} md={6} className="input_margin">
+              <input type="submit" value="Enviar"  />
+              </Col>
+            </Row>
+      </form>
+
+    </Container>
+)
 }
 export default Contacto
