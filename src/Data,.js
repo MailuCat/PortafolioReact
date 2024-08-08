@@ -27,7 +27,7 @@ const Data = [
         "año": "2022",
         "img": imagen2,
         "desc": "Medio de comunicación dedicado a noticias medioambientales, nueva área del proyecto Efecto Mariposa",
-        "enlace": "https://animales.efectomariposa.org/",
+        "enlace": "https://unefectomariposa.netlify.app",
         "github": "https://github.com/MailuCat/noticias_efecto"
 
       },
