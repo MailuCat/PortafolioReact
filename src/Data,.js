@@ -37,8 +37,8 @@ const Data = [
         "category": ["Vuetify", "CSS", "HTML", "Algolia", "JavaScript", "Responsivo", "Vue.js"],
         "año": "$2022",
         "img": imagen3,
-        "desc": "https://www.efectomariposa.org/",
-        "enlace": "https://www.efectomariposa.org/",
+        "desc": "https://www.efecto.mariposa.cl",
+        "enlace": "https://www.efecto-mariposa.cl",
         "github": "https://github.com/MailuCat/EfectoMariposaFauna/tree/main"
 
     },
